@@ -1,0 +1,90 @@
+﻿@model IEnumerable<PMS.Models.Prisoner>
+
+@{
+    ViewBag.Title = "ViewAllPrisoners";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center">List of All Prisoners</h2>
+
+
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>
+           Crime
+        </th>
+        <th>
+            Employee Name
+        </th>
+        
+        <th>
+           Qualification
+        </th>
+        
+        <th>
+            Prisoner's Name
+        </th>
+        
+        <th>
+            Gender
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NextOfKin)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Crime.CrimeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.FirstName)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualification.QualificationName)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NextOfKin)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.PrisonerId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PrisonerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PrisonerId })
+        </td>
+    </tr>
+}
+
+</table>

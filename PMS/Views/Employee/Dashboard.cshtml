@@ -1,0 +1,67 @@
+﻿@model PMS.Models.Employee
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<div style="text-align: center">
+    <h2 class="h2-responsive"><u>@Html.DisplayFor(model => model.EmployeeType.EmployeeTypeName) @Html.DisplayFor(model => model.FirstName) (Dashboard)</u></h2><br />
+</div>
+
+<ul class="list-group span6">
+    <li class="list-group-item">
+        <b>@Html.DisplayName("Employee Type: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.EmployeeType.EmployeeTypeName)</span>
+    
+</li>
+    <li class="list-group-item">
+        <b>@Html.DisplayName("Qualification: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.Qualification.QualificationName)</span>
+
+    </li>
+        
+    <li class="list-group-item">
+        <b>@Html.DisplayName("First Name: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.FirstName)</span>
+
+    </li>
+       
+    <li class="list-group-item">
+        <b>@Html.DisplayName("Last Name: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.LastName)</span>
+
+    </li>
+       
+    <li class="list-group-item">
+        <b>@Html.DisplayName("Gender: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.Gender)</span>
+
+    </li>
+ 
+    <li class="list-group-item">
+        <b>@Html.DisplayName("Birth Date: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.BirthDate)</span>
+
+    </li>
+
+
+    <li class="list-group-item">
+        <b>@Html.DisplayName("Appointment Date: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.AppointmentDate)</span>
+
+    </li>
+
+    <li class="list-group-item">
+        <b>@Html.DisplayName("UserName: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.UserName)</span>
+
+    </li>
+
+
+    <li class="list-group-item">
+        <b>@Html.DisplayName("Password: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.Password)</span>
+
+    </li>
+
+
+    <li class="list-group-item">
+        <b>@Html.DisplayName("Phone: ")</b><span class="pull-xs-right">@Html.DisplayFor(model => model.PhoneNo)</span>
+
+    </li>
+
+       </ul>
+       
+

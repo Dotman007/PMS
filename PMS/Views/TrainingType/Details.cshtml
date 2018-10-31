@@ -1,0 +1,27 @@
+﻿@model PMS.Models.TrainingType
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TrainingType</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingTypeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrainingTypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

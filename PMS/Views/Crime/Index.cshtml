@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PMS.Models.Crime>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Crime List</h2>
+
+@if(Model.Count() == 0)
+{
+    <div>
+        <h3>No Crime have been Added Yet</h3>
+    </div>
+}
+else
+{
+
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CrimeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CrimeName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CrimeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CrimeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CrimeId })
+        </td>
+    </tr>
+}
+
+</table>
+}

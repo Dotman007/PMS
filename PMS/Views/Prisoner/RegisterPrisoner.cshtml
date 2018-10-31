@@ -1,0 +1,209 @@
+﻿@model PMS.Models.Prisoner
+
+@{
+    ViewBag.Title = "RegisterPrisoner";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2 class="text-center badge">Prisoner's Registration Page</h2>
+<br />
+<h2 class="text-center text-info">@ViewBag.Success</h2>
+<br />
+@using (Html.BeginForm("RegisterPrisoner","Prisoner",FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    <div style="background-color:#ffffff">
+
+        <div class="form-group form-horizontal col-md-6" style="background-color:#ffffff">
+
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, "First Name", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, "Last Name", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.LastName, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.OtherName, "Other Names", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.OtherName, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.OtherName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Gender, "Gender", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownListFor(model => model.Gender, new List<SelectListItem> {
+                new SelectListItem{Value="Male",Text="Male"},
+                new SelectListItem{Value="Female", Text="Female"}
+                }, new { @class = "form-control col-md-4" }
+                )
+                    @Html.ValidationMessageFor(model => model.Gender)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.QualificationId, "Qualification", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownList("QualificationId", null, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.QualificationId)
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.StateName, "State", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownListFor(model => model.StateName, new List<SelectListItem> {
+                new SelectListItem{Value="AA",Text="AA"},
+                new SelectListItem{Value="AS", Text="AS"},
+                new SelectListItem{Value="SS", Text="SS"},
+                new SelectListItem{Value="Others", Text="Others"}
+                }, new { @class = "form-control col-md-4" }
+                )
+                    @Html.ValidationMessageFor(model => model.StateName)
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LGA, new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.LGA, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.LGA)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.Address, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNo, "Phone No.", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.PhoneNo)
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group form-horizontal col-md-6" style="background-color:#ffffff">
+            <div class="form-group">
+                @Html.LabelFor(model => model.NextOfKin, "Next of Kin", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.NextOfKin, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.NextOfKin)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MotherName, "Mother's Name", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.MotherName, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.MotherName)
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FatherName, "Father's Name", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.FatherName, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.FatherName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MotherAddress, "Mother's Address", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextAreaFor(model => model.MotherAddress, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.MotherAddress)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FatherAddress, "Father's Address", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextAreaFor(model => model.FatherAddress, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.FatherAddress)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Genotype, "Genotype", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownListFor(model => model.Genotype, new List<SelectListItem> {
+                new SelectListItem{Value="AA",Text="AA"},
+                new SelectListItem{Value="AS", Text="AS"},
+                new SelectListItem{Value="SS", Text="SS"},
+                new SelectListItem{Value="Others", Text="Others"}
+                }, new { @class = "form-control col-md-4" }
+                )
+                    @Html.ValidationMessageFor(model => model.Genotype)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BloodGroup, "Blood Group", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownListFor(model => model.BloodGroup, new List<SelectListItem> {
+                new SelectListItem{Value="A+",Text="A+"},
+                new SelectListItem{Value="O+", Text="O+"}
+                }, new { @class = "form-control col-md-4" }
+                )
+                    @Html.ValidationMessageFor(model => model.BloodGroup)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CrimeId, "Crime", new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownList("CrimeId", null, new { @class = "form-control col-md-4" })
+                    @Html.ValidationMessageFor(model => model.CrimeId)
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="form-group" style="text-align:center">
+            <div class="col-md-4 col-md-12">
+                <input type="submit" value="Regsiter" class="btn btn-success" />
+            </div>
+        </div>
+        </div>
+
+    
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

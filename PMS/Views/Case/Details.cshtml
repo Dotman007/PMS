@@ -1,0 +1,83 @@
+﻿@model PMS.Models.Case
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Case</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prisoner.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prisoner.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JudgeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JudgeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourtName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourtName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Scheduled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Scheduled)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CaseId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

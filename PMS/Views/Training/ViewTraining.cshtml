@@ -1,0 +1,56 @@
+﻿@model IEnumerable<PMS.Models.Training>
+
+@{
+    ViewBag.Title = "ViewTraining";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>ViewTraining</h2>
+
+
+<table class="table table-bordered table-striped table-secondary">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prisoner.PrisonerRegNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainingType.TrainingTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trained)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prisoner.PrisonerRegNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainingType.TrainingTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trained)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TrainingId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TrainingId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TrainingId })
+        </td>
+    </tr>
+}
+
+</table>

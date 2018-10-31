@@ -1,0 +1,59 @@
+﻿@model PMS.Models.Training
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Training</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prisoner.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prisoner.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingType.TrainingTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingType.TrainingTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trained)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trained)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrainingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

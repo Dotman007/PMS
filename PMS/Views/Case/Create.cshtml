@@ -1,0 +1,77 @@
+﻿@model PMS.Models.Case
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2 class="text-center">Schedule Case</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CaseName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.CaseName, new { @class = "form-control", @placeholder = "Case Name" })
+                @Html.ValidationMessageFor(model => model.CaseName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CaseDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.CaseDate, new { @class = "form-control", @placeholder = "Case Date" })
+                @Html.ValidationMessageFor(model => model.CaseDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrisonerId, "Reg No", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("PrisonerId", null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PrisonerId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JudgeName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.JudgeName, new { @class = "form-control", @placeholder = "Judge Name" })
+                @Html.ValidationMessageFor(model => model.JudgeName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CourtName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.CourtName, new {@class="form-control", @placeholder="Court Name" })
+                @Html.ValidationMessageFor(model => model.CourtName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CaseDescription, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.CaseDescription, new { @class="form-control", @placeholder="Case Description"})
+                @Html.ValidationMessageFor(model => model.CaseDescription)
+            </div>
+        </div>
+
+        
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Schedule" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
